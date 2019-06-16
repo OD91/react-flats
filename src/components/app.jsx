@@ -27,14 +27,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <FlatList
           flats={this.state.flats}
           selectedFlat={this.state.selectedFlat}
           selectFlat={this.selectFlat}
         />
         <div className="map-container">
-          <GoogleMapReact defaultCenter={this.center()} defaultZoom={12}>
+          <GoogleMapReact
+            bootstrapURLKeys={{key:'AIzaSyACAc3B-a2YqkvoDOn7nBFizt1Ffx6FNaU'}}
+            defaultCenter={this.center()}
+            defaultZoom={12}>
             <Marker lat={this.state.selectedFlat.lat} lng={this.state.selectedFlat.lng} />
           </GoogleMapReact>
         </div>
